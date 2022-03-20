@@ -1,6 +1,6 @@
 {
   "name": "ursa-react",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A set of simple plain react components with the intention to provide a simple not too opinionated library.",
   "main": "dist/index.js",
   "scripts": {

@@ -1,10 +1,10 @@
 import React, { FormEventHandler, MouseEventHandler } from 'react';
 
 export interface ButtonProps {
-    id: string | undefined,
+    id?: string | undefined,
     autoFocus?: boolean | undefined;
     disabled?: boolean | undefined;
-    className: string,
+    className?: string | undefined,
     children: Element,
     type?: 'submit' | 'reset' | 'button' | undefined;
     onClick: MouseEventHandler,

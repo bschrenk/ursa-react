@@ -2,6 +2,7 @@ import React from 'react';
 
 export interface ButtonProps {
     id: string,
+    className: string,
     children: Element,
     disabled: boolean,
     onClick: Function,
@@ -10,13 +11,15 @@ export interface ButtonProps {
 
 export function Button({
     id,
+    className,
     children,
     disabled,
     onClick,
     onChange
 }: ButtonProps) {
     return (
-        <button
+        <button 
+            className={className}
             id={id}
             onChange={() => { onChange }}
             onClick={() => { onClick }}

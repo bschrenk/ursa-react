@@ -1,28 +1,34 @@
-import React from 'react';
+import React, { FormEventHandler, MouseEventHandler } from 'react';
 
 export interface ButtonProps {
-    id: string,
+    id: string | undefined,
+    autoFocus?: boolean | undefined;
+    disabled?: boolean | undefined;
     className: string,
     children: Element,
-    disabled: boolean,
-    onClick: Function,
-    onChange: Function
+    type?: 'submit' | 'reset' | 'button' | undefined;
+    onClick: MouseEventHandler,
+    onChange: FormEventHandler
 }
 
 export function Button({
     id,
+    autoFocus,
     className,
     children,
     disabled,
+    type,
     onClick,
     onChange
 }: ButtonProps) {
     return (
-        <button 
+        <button
+            autoFocus={autoFocus}
             className={className}
             id={id}
-            onChange={() => { onChange }}
-            onClick={() => { onClick }}
+            type={type}
+            onChange={onChange}
+            onClick={onClick}
             disabled={disabled}
         >
             {children}

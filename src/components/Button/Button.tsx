@@ -1,17 +1,26 @@
-import React, { FormEventHandler, MouseEventHandler } from 'react';
+import React, { FormEventHandler, MouseEventHandler, ReactNode } from 'react';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  background-color: ${(props) => props.theme.colors.primary};
+  color: white;
+  border: 5px solid blue;
+  padding: 10px 20px;
+  cursor: pointer;
+`;
 
 export interface ButtonProps {
     id?: string | undefined,
     autoFocus?: boolean | undefined;
     disabled?: boolean | undefined;
     className?: string | undefined,
-    children: Element,
+    children: ReactNode,
     type?: 'submit' | 'reset' | 'button' | undefined;
     onClick: MouseEventHandler,
     onChange: FormEventHandler
 }
 
-export function Button({
+const Button = ({
     id,
     autoFocus,
     className,
@@ -20,9 +29,9 @@ export function Button({
     type,
     onClick,
     onChange
-}: ButtonProps) {
+}: ButtonProps) => {
     return (
-        <button
+        <StyledButton
             autoFocus={autoFocus}
             className={className}
             id={id}
@@ -32,6 +41,9 @@ export function Button({
             disabled={disabled}
         >
             {children}
-        </button>
+        </StyledButton>
     );
+
 };
+
+export { Button };

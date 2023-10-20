@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 export interface FieldsetProps {
-  children?: Element,
+  children?: ReactNode,
   disabled?: boolean | undefined;
   form?: string | undefined;
   name?: string | undefined;

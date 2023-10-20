@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 export interface LabelProps {
     htmlFor: string,
     id: string,
     className: string,
-    children: Element,
+    children: ReactNode,
 }
 
 export function Label({

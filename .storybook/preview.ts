@@ -3,7 +3,7 @@ import type { Preview } from "@storybook/react";
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import { UrsaProvider } from '../src/ursaProvider'
 import { defaultTheme } from '../src/defaultTheme';
-import { globalStyles } from '../src/globalStyles';
+import { GlobalStyles } from '../src/globalStyles';
 
 export const decorators = [
   withThemeFromJSXProvider({
@@ -12,7 +12,7 @@ export const decorators = [
     },
     defaultTheme: 'default',
     Provider: UrsaProvider,
-    GlobalStyles: globalStyles,
+    GlobalStyles: GlobalStyles,
   })];
 
 const preview: Preview = {

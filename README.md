@@ -10,3 +10,39 @@ Run the following command using [npm](https://www.npmjs.com/):
 ```bash
 npm install ursa-react --save
 ```
+
+
+## In you react app you can start using by adding the provider as below
+
+```
+root.render(
+  <UrsaProvider customTheme={customTheme}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UrsaProvider>
+);
+
+```
+
+
+## An optional custom theme can be applied or managed in your app to extend features of the library
+
+```
+// Define other any theme changes in your app
+const customTheme = {
+  colors: {
+    primary: '',
+  },
+};
+
+root.render(
+  <UrsaProvider customTheme={customTheme}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UrsaProvider>
+);
+```
+
+## 

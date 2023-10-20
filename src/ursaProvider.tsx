@@ -5,7 +5,7 @@ import React from 'react';
 
 interface UrsaProviderProps {
     children: ReactNode;
-    customTheme: DefaultTheme;
+    customTheme?: DefaultTheme;
 }
 
 const UrsaProvider: React.FC<UrsaProviderProps> = ({ children, customTheme }) => {

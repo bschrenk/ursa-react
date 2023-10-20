@@ -2,12 +2,13 @@ import React, { FormEventHandler, MouseEventHandler, ReactNode } from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`  
-  background-color: ${(props) => props.theme.colors.primary};
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), ${(props) => props.theme.colors.primary};
   border: none;
-  border-radius: 1rem;
+  border-radius: ${(props) => props.theme.borderRadius};
   color: #FFFFFF;
   padding: .7rem 1.5rem;
   cursor: pointer;
+  transition: background 1s;
 
   &:focus-visible {
       outline: 2px solid #101820;
@@ -20,8 +21,7 @@ const StyledButton = styled.button`
   }
 
   &:hover:enabled {
-      transition: ease .2s;
-      background-color: #005281;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), ${(props) => props.theme.colors.primary};
   }
 `;
 

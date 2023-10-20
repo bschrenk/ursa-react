@@ -1,25 +1,19 @@
 import type { Preview } from "@storybook/react";
 
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
-import { createGlobalStyle } from 'styled-components';
 import { UrsaProvider } from '../src/ursaProvider'
 import { defaultTheme } from '../src/defaultTheme';
-
-const GlobalStyles = createGlobalStyle`
-  body {
-    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-`;
+import { globalStyles } from '../src/globalStyles';
 
 export const decorators = [
   withThemeFromJSXProvider({
-  themes: {
-    default: defaultTheme,
-  },
-  defaultTheme: 'default',
-  Provider: UrsaProvider,
-  GlobalStyles,
-})];
+    themes: {
+      default: defaultTheme,
+    },
+    defaultTheme: 'default',
+    Provider: UrsaProvider,
+    GlobalStyles: globalStyles,
+  })];
 
 const preview: Preview = {
   parameters: {

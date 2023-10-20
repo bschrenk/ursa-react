@@ -5,8 +5,10 @@ const defaultTheme: DefaultTheme = {
       primary: '#0066A1',
       secondary: 'green',
     },
+    borderRadius: ".5rem",
     fonts: {
-      primary: 'Arial, sans-serif',
+      family: 'Arial, sans-serif',
+      color: '#101820'
     },
   };
 

@@ -1,4 +1,12 @@
 import React, { ReactNode } from 'react';
+import styled from 'styled-components';
+
+const StyledFieldset = styled.fieldset`  
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border: none;
+`;
 
 export interface FieldsetProps {
   children?: ReactNode,
@@ -9,16 +17,16 @@ export interface FieldsetProps {
   className?: string | undefined,
 }
 
-export function Fieldset({
+const Fieldset = ({
   id,
   className,
   form,
   name,
   children,
   disabled
-}: FieldsetProps) {
+}: FieldsetProps) => {
   return (
-    <fieldset
+    <StyledFieldset
       id={id}
       className={className}
       form={form}
@@ -26,9 +34,8 @@ export function Fieldset({
       disabled={disabled}
     >
       {children}
-    </fieldset>
+    </StyledFieldset>
   );
 };
 
-
-
+export { Fieldset }

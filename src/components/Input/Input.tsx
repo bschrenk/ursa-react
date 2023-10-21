@@ -1,4 +1,18 @@
 import React, { ChangeEventHandler, MouseEventHandler, HTMLInputTypeAttribute } from 'react';
+import styled from 'styled-components';
+
+const StyledInput = styled.input`  
+    display: flex;
+    padding: 0.7rem;
+    width: 100%;
+    border: .12rem solid ${(props) => props.theme.fonts.color};;
+    border-radius: ${(props) => props.theme.borderRadius};
+    box-sizing: border-box;
+    
+    &:focus-visible {
+        outline: .2rem solid ${(props) => props.theme.colors.primary};;
+    }
+`;
 
 export interface InputProps {
   alt?: string | undefined;
@@ -31,7 +45,7 @@ export function Input({
   onChange,
 }: InputProps) {
   return (
-    <input
+    <StyledInput
       value={value}
       type={type}
       alt={alt}

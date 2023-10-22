@@ -45,4 +45,28 @@ root.render(
 );
 ```
 
-## 
+## Add in the Global Styles to get a css reset and set fonts and things to remove default browsers styles
+
+```
+import { GlobalStyles, UrsaProvider } from 'ursa-react';
+
+// Define other any theme changes in your app
+const customTheme = {
+  colors: {
+    primary: '',
+  },
+};
+
+root.render(
+  <UrsaProvider customTheme={customTheme}>
+    <GlobalStyles />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UrsaProvider>
+);
+```
+
+## Take a tour of the storybook docs here 
+
+[Ursa React Storybook Docs (https://bschrenk.github.io/ursa-react)](https://bschrenk.github.io/ursa-react)

@@ -32,7 +32,9 @@ const ListItem: React.FC<ListItemProps> = ({
             {children}
         </StyledListItem>
     );
+};
 
+ListItem.defaultProps = {
 };
 
 export { ListItem };

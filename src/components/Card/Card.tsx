@@ -27,4 +27,7 @@ const Card = ({
 
 };
 
+Card.defaultProps = {
+};
+
 export { Card };

@@ -30,4 +30,7 @@ const List = ({
     );
 };
 
+List.defaultProps = {
+};
+
 export { List };

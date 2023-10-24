@@ -38,4 +38,7 @@ const Fieldset = ({
   );
 };
 
+Fieldset.defaultProps = {
+};
+
 export { Fieldset }

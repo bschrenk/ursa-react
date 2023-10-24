@@ -59,7 +59,9 @@ const Button = ({
             {children}
         </StyledButton>
     );
+};
 
+Button.defaultProps = {
 };
 
 export { Button };

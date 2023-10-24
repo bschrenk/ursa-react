@@ -30,7 +30,7 @@ export interface InputProps {
   onClick?: MouseEventHandler;
 }
 
-export function Input({
+const Input = ({
   id,
   disabled,
   alt,
@@ -43,7 +43,7 @@ export function Input({
   value,
   onClick,
   onChange,
-}: InputProps) {
+}: InputProps) => {
   return (
     <StyledInput
       value={value}
@@ -62,5 +62,8 @@ export function Input({
   );
 };
 
+Input.defaultProps = {
+};
 
+export { Input }
 

@@ -26,4 +26,7 @@ const Label = ({
     );
 };
 
+Label.defaultProps = {
+};
+
 export { Label }

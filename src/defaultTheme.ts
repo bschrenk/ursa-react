@@ -8,7 +8,18 @@ const defaultTheme: DefaultTheme = {
     borderRadius: ".5rem",
     fonts: {
       family: 'Arial, sans-serif',
-      color: '#101820'
+      size: {
+        h1: '3.8rem',
+        h2: '2.8rem',
+        h3: '1.8rem',
+        h4: '1.5rem',
+        h5: '1.3rem',
+        h6: '1rem',
+        p: '.8rem',
+        body: '.8rem',
+      },
+      color: '#101820',
+       
     },
   };
 

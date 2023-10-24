@@ -17,10 +17,10 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     font-family: ${(props) => props.theme.fonts.family};
     color: ${(props) => props.theme.fonts.color}; 
+    font-size: ${(props) => props.theme.fonts.size.body};
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */

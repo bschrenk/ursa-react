@@ -32,8 +32,8 @@ export interface ButtonProps {
     className?: string | undefined,
     children: ReactNode,
     type?: 'submit' | 'reset' | 'button' | undefined;
-    onClick: MouseEventHandler,
-    onChange: FormEventHandler
+    onClick?: MouseEventHandler,
+    onChange?: FormEventHandler
 }
 
 const Button = ({

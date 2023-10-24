@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Input } from './Input';
+import { Link, LinkType } from './Link';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Example/Input',
-  component: Input,
+  title: 'Example/Link',
+  component: Link,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -16,15 +16,16 @@ const meta = {
   // argTypes: {
   //   backgroundColor: { control: 'color' },
   // },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Link>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const InputVal: Story = {
+export const Main: Story = {
   args: {
-    type: 'text',
-    placeholder: 'Placeholder Value'
+    type: LinkType.Regular,
+    href: "/fancy/example",
+    content: "Text that will be shown"
   },
 };

@@ -5,3 +5,5 @@ export { Fieldset } from './Fieldset/Fieldset';
 export { List } from './List/List';
 export { Card } from './Card/Card';
 export { Chip } from './Chip/Chip';
+export { Typography } from './Typography/Typography';
+export { Link } from './Link/Link';

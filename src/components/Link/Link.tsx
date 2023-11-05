@@ -7,6 +7,11 @@ enum LinkType {
     Button = "button",
 }
 
+enum LinkDecorator {
+    Underline = "underline",
+    None = "none",
+}
+
 interface StyledLinkProps {
     children: ReactNode | string;
 };
@@ -14,33 +19,36 @@ interface StyledLinkProps {
 interface LinkProps {
     type: LinkType;
     href: string;
+    decorator: LinkDecorator;
     content: ReactNode | string;
 }
 
-const StyledRegularLink: React.FC<StyledLinkProps & { href: string }> = styled.a`
+const StyledRegularLink: React.FC<StyledLinkProps & { href: string, decorator: LinkDecorator }> = styled.a`
   color: ${(props) => props.theme.colors.primary};
-  text-decoration: underline;
+  text-decoration: ${(props) => props.decorator};
   cursor: pointer;
 `;
 
-const determineLink = (type: LinkType, href: string, content: ReactNode | string) => {
+const determineLink = (type: LinkType, href: string, content: ReactNode | string, decorator: LinkDecorator) => {
     switch (type) {
         case LinkType.Regular:
-            return <StyledRegularLink href={href}>{content}</StyledRegularLink>;
+            return <StyledRegularLink decorator={decorator} href={href}>{content}</StyledRegularLink>;
         case LinkType.Button:
-            return <StyledRegularLink href={href}><Button>{content}</Button></StyledRegularLink>;
+            return <StyledRegularLink decorator={decorator} href={href}><Button>{content}</Button></StyledRegularLink>;
     }
 }
 
 const Link = ({
     type,
     href,
+    decorator,
     content,
 }: LinkProps) => {
-    return determineLink(type, href, content);
+    return determineLink(type, href, content, decorator);
 }
 
 Link.defaultProps = {
+    decorator: LinkDecorator.None
 };
 
-export { Link, LinkProps, LinkType };
+export { Link, LinkProps, LinkType, LinkDecorator };

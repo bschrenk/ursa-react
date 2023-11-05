@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Link, LinkType } from './Link';
+import { Link, LinkDecorator, LinkType } from './Link';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -26,6 +26,7 @@ export const Main: Story = {
   args: {
     type: LinkType.Regular,
     href: "/fancy/example",
-    content: "Text that will be shown"
+    content: "Text that will be shown",
+    decorator: LinkDecorator.None,
   },
 };

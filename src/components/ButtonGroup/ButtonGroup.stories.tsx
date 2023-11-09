@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import ButtonGroup, { ButtonGroupProps } from './ButtonGroup'; // Make sure to import your ButtonGroup component and its props
+import { ButtonGroup } from './ButtonGroup'; // Make sure to import your ButtonGroup component and its props
 import { Button } from '../Button/Button';
 
 const meta = {

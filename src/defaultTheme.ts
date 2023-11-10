@@ -19,7 +19,6 @@ const defaultTheme: DefaultTheme = {
         body: '1rem',
       },
       color: '#101820',
-       
     },
   };
 

@@ -8,6 +8,7 @@ export {
     Label,
     Link,
     List,
+    Modal,
     Typography,
 } from './components';
 export { GlobalStyles } from './globalStyles'

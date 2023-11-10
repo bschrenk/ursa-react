@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Chip } from './Chip';
+import { Chip, HTMLColor } from './Chip';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -26,5 +26,14 @@ export const Main: Story = {
   args: {
     label: 'Basic Chip',
     disabled: false
+  },
+};
+
+export const Colored: Story = {
+  args: {
+    label: 'Basic Chip',
+    disabled: false,
+    bgColor: HTMLColor.PALEVIOLETRED,
+    fontColor: HTMLColor.WHITE
   },
 };

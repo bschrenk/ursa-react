@@ -30,7 +30,7 @@ export const Main: Story = {
     children: (
       <>
         <Label>Firstname</Label>
-        <Input placeholder='John' />
+        <Input title='Firstname' placeholder='John' />
       </>
     )
   },

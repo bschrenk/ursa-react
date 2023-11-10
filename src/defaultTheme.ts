@@ -15,8 +15,8 @@ const defaultTheme: DefaultTheme = {
         h4: '1.5rem',
         h5: '1.3rem',
         h6: '1rem',
-        p: '.8rem',
-        body: '.8rem',
+        p: '1rem',
+        body: '1rem',
       },
       color: '#101820',
        

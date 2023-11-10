@@ -24,6 +24,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const InputVal: Story = {
   args: {
+    title: 'title and aria label',
     type: 'text',
     placeholder: 'Placeholder Value'
   },

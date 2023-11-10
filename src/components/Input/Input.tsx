@@ -20,6 +20,7 @@ const StyledInput = styled.input`
 `;
 
 export interface InputProps {
+  title: string
   alt?: string | undefined;
   autoComplete?: string | undefined;
   autoFocus?: boolean | undefined;
@@ -36,6 +37,7 @@ export interface InputProps {
 }
 
 const Input = ({
+  title,
   alt,
   autoComplete,
   disabled,
@@ -51,6 +53,7 @@ const Input = ({
 }: InputProps) => {
   return (
     <StyledInput
+      title={title}
       alt={alt}
       autoComplete={autoComplete}
       disabled={disabled}

@@ -8,9 +8,7 @@ const setDisabledBackground = (disabled: boolean | undefined) => {
 const StyledChip = styled.span<{ disabled?: boolean }>`  
     border: .1rem solid ${(props) => props.theme.colors.primary};
     background: ${(props) => setDisabledBackground(props.disabled)};
-    display: flex;
-    padding: .7rem 1.5rem;
-    margin: .5rem;
+    padding: 0.4rem;
     border-radius: 1.5rem;
     cursor: pointer;
     user-select: none;

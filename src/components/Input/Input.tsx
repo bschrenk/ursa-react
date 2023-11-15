@@ -40,6 +40,7 @@ const Input = ({
   title,
   alt,
   autoComplete,
+  autoFocus,
   disabled,
   id,
   name,
@@ -56,6 +57,7 @@ const Input = ({
       title={title}
       alt={alt}
       autoComplete={autoComplete}
+      autoFocus={autoFocus}
       disabled={disabled}
       id={id}
       name={name}

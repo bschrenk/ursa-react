@@ -1,6 +1,5 @@
-import React, { ChangeEventHandler, MouseEventHandler, HTMLInputTypeAttribute, ReactNode } from 'react';
+import React, { ChangeEventHandler, MouseEventHandler, HTMLInputTypeAttribute } from 'react';
 import styled from 'styled-components';
-import { Button } from '../Button/Button';
 
 const StyledInputContainer = styled.div`
   position: relative;

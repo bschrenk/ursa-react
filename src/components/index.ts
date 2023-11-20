@@ -2,10 +2,14 @@ export { Button } from './Button/Button';
 export { ButtonGroup } from './ButtonGroup/ButtonGroup';
 export { Card } from './Card/Card';
 export { Chip } from './Chip/Chip';
+export { Column } from './Grid/Column';
+export { Dropdown } from './Dropdown/Dropdown';
 export { Fieldset } from './Fieldset/Fieldset';
+export { Grid } from './Grid/Grid';
 export { Input } from './Input/Input';
 export { Label } from './Label/Label';
 export { Link } from './Link/Link';
 export { List } from './List/List';
 export { Modal } from './Modal/Modal'
+export { Row } from './Grid/Row';
 export { Typography } from './Typography/Typography';

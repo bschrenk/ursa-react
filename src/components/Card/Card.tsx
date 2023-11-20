@@ -13,6 +13,7 @@ const StyledCard = styled.div`
     padding: 1rem;
     min-height: 3rem;
     min-width: 3rem;
+    width: 100%;
 `;
 
 export interface CardProps {

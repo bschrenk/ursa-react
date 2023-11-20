@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 const StyledGrid = styled.div`
   display: flex;
+  flex-direction: column;
   padding: .5rem;
+  width: 100%;
 `;
 
 export interface GridProps {

@@ -8,6 +8,7 @@ const StyledInputContainer = styled.div`
 const StyledInput = styled.input<{ hasButton?: boolean }>`
     display: inline-flex;
     padding: 0.7rem;
+    width: 100%;
     border: .12rem solid ${(props) => props.theme.fonts.color};
     border-radius: ${(props) =>
       props.hasButton

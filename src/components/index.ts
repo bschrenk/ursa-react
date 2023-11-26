@@ -12,4 +12,5 @@ export { Link } from './Link/Link';
 export { List } from './List/List';
 export { Modal } from './Modal/Modal'
 export { Row } from './Grid/Row';
+export { Toast } from './Toast/Toast'
 export { Typography } from './Typography/Typography';

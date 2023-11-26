@@ -13,6 +13,7 @@ export {
     List,
     Modal,
     Row,
+    Toast,
     Typography,
 } from './components';
 export { GlobalStyles } from './globalStyles'

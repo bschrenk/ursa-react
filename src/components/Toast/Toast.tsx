@@ -13,13 +13,6 @@ enum ToastColor {
     Secondary = 'secondary',
 }
 
-interface ToastProps {
-    message: string;
-    duration?: number;
-    position?: ToastPosition;
-    color?: ToastColor;
-}
-
 const getPositionStyles = (position: ToastPosition | undefined) => {
     switch (position) {
         case ToastPosition.TopLeft:
@@ -60,36 +53,56 @@ const getColorStyles = (color: ToastColor | undefined, themeColors: DefaultTheme
     }
 };
 
-const ToastWrapper = styled.div<{ position?: ToastPosition; color?: ToastColor; isVisible: boolean }>`
+const ToastWrapper = styled.div<{ position?: ToastPosition; color?: ToastColor; visible?: boolean }>`
   position: fixed;
   color: #fff;
   padding: 10px 20px;
   border-radius: 8px;
-  opacity: ${props => (props.isVisible ? '1' : '0')};
+  opacity: ${props => (props.visible ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
-  pointer-events: ${props => (props.isVisible ? 'auto' : 'none')};
+  pointer-events: ${props => (props.visible ? 'auto' : 'none')};
   ${props => getPositionStyles(props.position)};
   ${props => getColorStyles(props.color, props.theme.colors)};
 `;
 
-const Toast: React.FC<ToastProps> = ({ message, duration = 3000, position = ToastPosition.BottomRight, color = ToastColor.Primary }) => {
-    const [isVisible, setIsVisible] = useState(true);
+interface ToastProps {
+    message: string;
+    visible?: boolean;
+    duration?: number;
+    position?: ToastPosition;
+    color?: ToastColor;
+    onClose: () => void;
+}
+
+const Toast: React.FC<ToastProps> = ({ message, visible, duration, position, color, onClose }: ToastProps) => {
+    const [isVisible, setIsVisible] = useState(visible);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsVisible(false);
-        }, duration);
+        if (isVisible) {
+            const timer = setTimeout(() => {
+                setIsVisible(!visible)
+                onClose();
+            }, duration);
+            return () => {
+                clearTimeout(timer);
+            };
+        }
 
-        return () => {
-            clearTimeout(timer);
-        };
-    }, [duration]);
+
+    }, [isVisible, duration]);
 
     return (
-        <ToastWrapper isVisible={isVisible} position={position} color={color}>
+        <ToastWrapper visible={isVisible} position={position} color={color}>
             {message}
         </ToastWrapper>
     );
+};
+
+Toast.defaultProps = {
+    visible: false,
+    duration: 3000,
+    position: ToastPosition.BottomRight,
+    color: ToastColor.Primary
 };
 
 export { Toast, ToastProps, ToastPosition, ToastColor };

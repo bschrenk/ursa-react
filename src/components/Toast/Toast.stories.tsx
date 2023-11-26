@@ -14,30 +14,31 @@ export default {
     tags: ['autodocs'],
 } as Meta;
 
-const Template: Story<ToastProps> = args => {
+const Template: Story<ToastProps> = (args) => {
     const [isVisible, setIsVisible] = useState(false);
 
+    const handleToastClose = () => {
+        setIsVisible(false);
+      };
+
+      
     const triggerToast = () => {
         setIsVisible(true);
-        action('Toast triggered')(args);
     };
-
-    useEffect(() => {
-        if (isVisible) {
-            const timer = setTimeout(() => {
-                setIsVisible(false);
-            }, args.duration || 3000);
-
-            return () => {
-                clearTimeout(timer);
-            };
-        }
-    }, [isVisible, args.duration]);
 
     return (
         <>
             <Button onClick={triggerToast}>Trigger Toast</Button>
-            {isVisible && <Toast {...args} />}
+            {isVisible && (
+                <Toast
+                    message={args.message}
+                    position={args.position}
+                    visible={isVisible}
+                    duration={args.duration}
+                    color={args.color}
+                    onClose={handleToastClose}
+                />
+            )}
         </>
     );
 };
